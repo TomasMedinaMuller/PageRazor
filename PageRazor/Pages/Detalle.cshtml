@@ -1,0 +1,32 @@
+﻿@page
+@model PageRazor.Pages.DetalleModel
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date</th>
+                <th scope="col">Seller</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr>
+                <td>@Model.Venta.Id</td>
+                <td>@Model.Venta.Nombre</td>
+                <td>@Model.Venta.Descripcion</td>
+                <td>$ @Model.Venta.Precio</td>
+                <td>@Model.Venta.Cantidad</td>
+                <td>@Model.Venta.Fecha</td>
+                <td>@Model.Venta.Vendedor</td>
+                
+            </tr>
+        </tbody>
+    </table>
+<div>
+    <a href="Index" class="btn btn-primary active" aria-current="page">Volver</a>
+</div>
+

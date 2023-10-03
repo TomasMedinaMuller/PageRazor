@@ -1,0 +1,38 @@
+﻿@page
+@model PageRazor.Pages.IndexModel
+@* Redirige a la page "Nuevo" *@
+<div>
+    <a href="Nuevo" class="btn btn-primary active" aria-current="page">New article</a>
+</div>
+
+@{
+    var listado = Model.Listado.ObtenerTodos(); 
+    if (listado.Count() == 0)
+    {
+        <h2>No hay ventas</h2>
+    }
+    else
+    {
+        
+      
+        foreach (var item in listado)
+        {
+            <br>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Nombre</h5>
+                    <h2 class="card-title">$ @item.Precio</h2>
+                    <p class="card-text">@item.Descripcion</p>
+                    <a href="Detalle?Id=@item.Id" class="btn btn-primary">See</a>
+                    <a href="Editar?Id=@item.Id" class="btn btn-primary">Edit</a>
+                    <a href="Borrar?Id=@item.Id" class="btn btn-primary">Delete</a>
+                </div>
+            </div>
+            
+        }
+    }
+
+
+
+}
+
